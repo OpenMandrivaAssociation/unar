@@ -7,6 +7,8 @@ Group:          Archiving/Compression
 URL:            https://theunarchiver.com/command-line
 Source0:        https://github.com/MacPaw/XADMaster/archive/v%{version}/XADMaster-%{version}.tar.gz
 Source2:	https://github.com/MacPaw/universal-detector/archive/1.1/universal-detector-1.1.tar.gz
+
+BuildRequires:  gcc-objc
 BuildRequires:  pkgconfig(bzip2)
 BuildRequires:  gnustep-base-devel
 BuildRequires:  pkgconfig(icu-uc)
