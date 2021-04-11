@@ -26,7 +26,7 @@ in foreign character sets.
 
 %prep
 %autosetup -c
-tar -axf %{SOURCE2} 
+tar -xf %{SOURCE2} 
 # compilation depends on the exact case sensitive name of the SOURCE2 folder
 ln -s universal-detector-1.1 UniversalDetector
 rm -fr __MACOSX The\ Unarchiver
