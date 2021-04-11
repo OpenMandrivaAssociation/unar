@@ -5,8 +5,8 @@ Summary:        Multi format application for uncompressing archive files
 License:        LGPLv2+
 Group:          Archiving/Compression
 URL:            https://theunarchiver.com/command-line
-Source0:        https://github.com/MacPaw/XADMaster/archive/v%{version}/%{name}-%{version}.tar.gz
-Source2:	https://github.com/MacPaw/universal-detector/archive/%{detectorver}/universal-detector-%{detectorver}.tar.gz
+Source0:        https://github.com/MacPaw/XADMaster/archive/v%{version}/XADMaster-%{version}.tar.gz
+Source2:	https://github.com/MacPaw/universal-detector/archive/1.1/universal-detector-1.1.tar.gz
 BuildRequires:  pkgconfig(bzip2)
 BuildRequires:  gnustep-base-devel
 BuildRequires:  pkgconfig(icu-uc)
@@ -17,12 +17,18 @@ BuildRequires:  pkgconfig(wavpack)
 The command-line utilities lsar and unar are capable of listing and extracting
 files respectively in several formats including RARv3 and RARv5. 
 unar can serve as a free and open source replacement of unrar.
+It was originally a Mac OS X application. This package
+contains a command-line variant of it. Unarchiver handles ZIP, ZIPX,
+RAR, 7z, tar, gzip, bzip2, lzma, xz, CAB, MSI, NSIS, some
+self-extracting EXEs, cpio, and further obscure and old formats, as
+well as disc images in ISO, BIN, MDF, NRG, CDI. It supports filenames
+in foreign character sets.
 
 %prep
 %autosetup -c
 tar -axf %{SOURCE2} 
 # compilation depends on the exact case sensitive name of the SOURCE2 folder
-ln -s universal-detector-%{detectorver} UniversalDetector
+ln -s universal-detector-1.1 UniversalDetector
 rm -fr __MACOSX The\ Unarchiver
 # recursively remove executable bit from every file, skipping directories
 find . -type f -print0 | xargs -0 chmod -x
