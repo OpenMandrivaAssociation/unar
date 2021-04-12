@@ -29,8 +29,7 @@ well as disc images in ISO, BIN, MDF, NRG, CDI. It supports filenames
 in foreign character sets.
 
 %prep
-%autosetup -c -p1
-#patch0 -p1
+%autosetup -c
 tar -xf %{SOURCE2} 
 # compilation depends on the exact case sensitive name of the SOURCE2 folder
 ln -s universal-detector-1.1 UniversalDetector
