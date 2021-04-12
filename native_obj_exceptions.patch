@@ -1,8 +1,7 @@
-diff --git a/Makefile.linux b/Makefile.linux
-index 153ef71..e44ff0e 100644
---- a/Makefile.linux
-+++ b/Makefile.linux
-@@ -10,7 +10,6 @@ AR = ar
+diff -uraN XADMaster-1.10.7/Makefile.linux omv-XADMaster-1.10.7/Makefile.linux
+--- XADMaster-1.10.7/Makefile.linux	2020-01-11 18:21:47.000000000 +0100
++++ omv-XADMaster-1.10.7/Makefile.linux	2021-04-12 02:52:32.637681599 +0200
+@@ -10,7 +10,6 @@
  
  GNUSTEP_OPTS =	-DGNUSTEP \
  		-DGNU_RUNTIME=1 \
