@@ -8,8 +8,8 @@ URL:            https://theunarchiver.com/command-line
 Source0:        https://github.com/MacPaw/XADMaster/archive/v%{version}/XADMaster-%{version}.tar.gz
 Source2:	https://github.com/MacPaw/universal-detector/archive/1.1/universal-detector-1.1.tar.gz
 
-BuildRequires:  gcc-objc
 BuildRequires:  gnustep-make
+BuildRequires:	pkgconfig(libobjc)
 BuildRequires:  pkgconfig(bzip2)
 BuildRequires:  gnustep-base-devel
 BuildRequires:  pkgconfig(icu-uc)
@@ -38,7 +38,7 @@ find . -type f -print0 | xargs -0 chmod -x
 
 %build
 export OBJCFLAGS=`gnustep-config --objc-flags`
-make -C XADMaster-%{version} -f Makefile.linux
+make -C XADMaster-%{version} -f Makefile.linux CC=clang OBJCC=clang CXX=clang++
 
 %install
 install -d %{buildroot}%{_bindir}
