@@ -7,6 +7,7 @@ Group:          Archiving/Compression
 URL:            https://theunarchiver.com/command-line
 Source0:        https://github.com/MacPaw/XADMaster/archive/v%{version}/XADMaster-%{version}.tar.gz
 Source2:	https://github.com/MacPaw/universal-detector/archive/1.1/universal-detector-1.1.tar.gz
+Patch0:   native_obj_exceptions.patch
 
 BuildRequires:  gcc-objc
 BuildRequires:  gnustep-make
@@ -29,6 +30,7 @@ in foreign character sets.
 
 %prep
 %autosetup -c
+%patch0 -p1
 tar -xf %{SOURCE2} 
 # compilation depends on the exact case sensitive name of the SOURCE2 folder
 ln -s universal-detector-1.1 UniversalDetector
