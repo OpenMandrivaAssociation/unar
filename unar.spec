@@ -1,6 +1,6 @@
 Name:           unar
 Version:        1.10.8
-Release:        1
+Release:        2
 Summary:        Multi format application for uncompressing archive files
 License:        LGPLv2+
 Group:          Archiving/Compression
